@@ -1,5 +1,6 @@
 package weekThreeAssignment;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class weekThreeAssignment {
@@ -54,7 +55,7 @@ public class weekThreeAssignment {
 					
 			System.out.println("Is sum of Ages greater than 100: " + isSumIntArray(ages)); 
 			
-			double [] doubles = new double [] {34.5, 20.9, 13.4, 5.6};
+			double [] doubles = new double [] {134.5, 20.9, 13.4, 5.6};
 			System.out.println("Average of all the elements is: " + elementsAverage(doubles));	
 			
 			double [] doubles2 = new double [] {25.4, 8.7, 63.8};
@@ -100,11 +101,13 @@ public class weekThreeAssignment {
 			
 			public static boolean averageOfTwoArrays(double [] firstArray, double[] secondArray) {
 				double sum = 0;
-				if (firstArray.length > secondArray.length) {
-				return true;
+				DecimalFormat numberFormat = new DecimalFormat("#.000");
+				double firstArrayAvg=elementsAverage(firstArray);
+				double secondArrayAvg=elementsAverage(secondArray);
+				System.out.println("First array avg "+numberFormat.format(firstArrayAvg));
+				System.out.println("Second array avg "+numberFormat.format(secondArrayAvg));
+				return (firstArrayAvg>secondArrayAvg);
 			}
-			return false;
-}
 			
 			public static boolean willBuyDrink(boolean isHotOutside, double moneyinPocket) {
 			if (isHotOutside == true && (moneyinPocket > 0)) {
